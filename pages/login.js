@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import Router from 'next/router';
 import React from 'react'
 
 const login = () => {
@@ -90,7 +91,7 @@ const login = () => {
                                 </a>
                             </div>
                         </div>
-                        <Button className="w-full">
+                        <Button onClick={()=>Router.push('/')} className="w-full">
                             Sign in
                         </Button>
                     </div>
