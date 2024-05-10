@@ -24,6 +24,9 @@ const login = () => {
             <div className="flex items-center justify-center px-4 py-12">
                 <div className="w-full max-w-md space-y-8">
                     <div>
+                        <div className='flex justify-center pb-12'>
+                            <img src="/logomavericks.png" className='w-64 mr-4' />
+                        </div>
                         <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
                         Sign in to your account
                         </h2>
