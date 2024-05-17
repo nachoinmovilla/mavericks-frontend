@@ -128,6 +128,19 @@ const MyListings = () => {
             longitude: -0.706871,
             latitude: 38.273639
         },
+        {
+            type: "For Sell",
+            rentType: null,
+            image: "https://images.unsplash.com/photo-1598737652403-6e0ee5bf5cf2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            price: "367.848€",
+            address: "3201 23rd St, San Francisco, CA 94110, USA",
+            area: 250,
+            bath: 2,
+            garage: 2,
+            room: 5,
+            longitude: -0.518501,
+            latitude: 38.249485
+        }
     ]
 
     return (
