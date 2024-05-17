@@ -10,7 +10,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 
 const MyListings = () => {
 
-    const mapboxToken = "sk.eyJ1IjoibmFjaG9pbm1vdmlsbGEiLCJhIjoiY2x3YWZiZHJ2MGJ2ODJqczI0ZG10bGVvcyJ9.QlSiAGGQwVkZzgWLOxuvJA"
+    const mapboxToken = "pk.eyJ1IjoibmFjaG9pbm1vdmlsbGEiLCJhIjoiY2x3YWY5Y3Z0MGJ1cDJqczJ4OXRmaXFocCJ9.PrCOUO8q3n6eQxzkeCbSKg"
 
     const LISTINGS = [
         {
@@ -120,13 +120,13 @@ const MyListings = () => {
                         mapLib={import('mapbox-gl')}
                         mapboxAccessToken={mapboxToken}
                         initialViewState={{
-                            longitude: -100,
-                            latitude: 40,
-                            zoom: 3.5
+                            longitude: -0.70107,
+                            latitude: 38.26218,
+                            zoom: 13
                         }}
                         width="100%"
                         height="100%"
-                        mapStyle="mapbox://styles/mapbox/streets-v9"
+                        mapStyle="mapbox://styles/mapbox/light-v11"
                     />
                 </div>
             </div>
