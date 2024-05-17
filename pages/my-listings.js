@@ -3,7 +3,7 @@
 import Layout from '@/components/Layout';
 import ListingPreview from '@/components/common/ListingPreview';
 import { Button } from '@/components/ui/button';
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { BiFilter, BiGrid, BiGridAlt, BiListOl } from 'react-icons/bi';
 import ReactMapGL, {Marker} from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -20,9 +20,21 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 
 const MyListings = () => {
 
+    const mapRef = useRef();
+
     const [markedListing, setMarkedListing] = useState(null)
 
+    const [latitudeMap, setLatitudeMap] = useState(38.266566)
+    const [longitudeMap, setLongitudeMap] = useState(-0.698154)
+
     const mapboxToken = "pk.eyJ1IjoibmFjaG9pbm1vdmlsbGEiLCJhIjoiY2x3YWY5Y3Z0MGJ1cDJqczJ4OXRmaXFocCJ9.PrCOUO8q3n6eQxzkeCbSKg"
+
+
+    const handleSetLatitudeLongitude = (listing) =>{
+        setLatitudeMap(listing?.latitude)
+        setLongitudeMap(listing?.longitude)
+        mapRef.current.flyTo({center: [listing?.longitude, listing?.latitude]});
+    }
 
     const LISTINGS = [
         {
@@ -143,7 +155,7 @@ const MyListings = () => {
                     </div>
                     <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6'>
                         {LISTINGS?.map((listing, index)=>(
-                            <div onMouseEnter={()=>setMarkedListing(index)} onMouseLeave={()=>setMarkedListing(null)} key={index}>
+                            <div onClick={()=>handleSetLatitudeLongitude(listing)} onMouseEnter={()=>setMarkedListing(index)} onMouseLeave={()=>setMarkedListing(null)} key={index}>
                                 <ListingPreview 
                                     data={listing}
                                 />
@@ -154,10 +166,11 @@ const MyListings = () => {
                 <div className='w-5/12 h-full p-2 bg-white'>
                     <ReactMapGL
                         mapLib={import('mapbox-gl')}
+                        ref={mapRef}
                         mapboxAccessToken={mapboxToken}
                         initialViewState={{
-                            longitude: -0.698154,
-                            latitude: 38.266566,
+                            longitude: longitudeMap,
+                            latitude: latitudeMap,
                             zoom: 14
                         }}
                         width="100%"
