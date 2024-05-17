@@ -59,3 +59,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.mapboxgl-ctrl-attrib-inner, .mapboxgl-ctrl-logo{
+  display: none!important;
+}

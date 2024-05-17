@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { BiArea, BiBath, BiBed, BiSolidCarGarage } from 'react-icons/bi';
+import { Badge } from '../ui/badge';
 
 
 
@@ -10,8 +11,13 @@ const ListingPreview = ({
     data
 }) => {
     return (
-        <div className='w-full bg-white rounded-md hover:scale-[0.99] hover:brightness-[0.98] duration-200 transition-all hover:cursor-pointer'>
+        <div className='w-full bg-white shadow-sm rounded-md hover:scale-[0.99] hover:brightness-[0.98] duration-200 transition-all hover:cursor-pointer'>
             <div className='h-52 rounded-t-md relative'>
+                <div className='absolute top-2 left-2'>
+                    <Badge variant="secondary">
+                        REF623736
+                    </Badge>
+                </div>
                 <img src={data?.image} className='object-cover rounded-t-md w-full h-full' />
             </div>
             <div className='p-4 space-y-3'>
@@ -33,7 +39,7 @@ const ListingPreview = ({
                 <div className='truncate w-full text-sm text-muted-foreground'>
                     {data?.address}
                 </div>
-                <div className='grid grid-cols-2 gap-4 text-muted-foreground'>
+                <div className='grid grid-cols-2 gap-4 text-muted-foreground text-sm'>
                     <div className='flex items-center space-x-2'>
                         <BiArea />
                         <span>
