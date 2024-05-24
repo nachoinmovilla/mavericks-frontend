@@ -99,12 +99,12 @@ export default function Home() {
     ]
 
     const gh1Options = {
-        colors: ['#373ef6'],
+        colors: ['#373ef6', "#34d399"],
         chart: {
           id: 'apexchart-example'
         },
         stroke: {
-            curve: 'stepline',
+            curve: 'smooth',
         },
         grid: {
             borderColor: '#e2e8f0',
@@ -133,6 +133,9 @@ export default function Home() {
                 },
             }
         },
+        legend: {
+            show: false
+        },
         yaxis: {
             show: false,
         }
@@ -140,7 +143,10 @@ export default function Home() {
 
     const gh1Series = [{
         name: 'series-1',
-        data: [47, 30, 40, 87, 67, 56, 65]
+        data: [57, 61, 67, 59, 43, 37, 35]
+    },{
+        name: 'series-2',
+        data: [50, 52, 55, 53, 40, 48, 58]
     }]
 
     const gh2Series = [{
