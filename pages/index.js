@@ -142,18 +142,18 @@ export default function Home() {
     }
 
     const gh1Series = [{
-        name: 'series-1',
+        name: 'Total House Sold',
         data: [57, 61, 67, 59, 43, 37, 35]
     },{
-        name: 'series-2',
+        name: 'Total House Rented',
         data: [50, 52, 55, 53, 40, 48, 58]
     }]
 
     const gh2Series = [{
-        name: 'Net Profit',
+        name: 'Deal clients',
         data: [100, 37, 120]
       }, {
-        name: 'Revenue',
+        name: 'Cancel clients',
         data: [140, 67, 139]
     }]
 
