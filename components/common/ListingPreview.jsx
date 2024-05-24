@@ -11,7 +11,7 @@ const ListingPreview = ({
     data
 }) => {
     return (
-        <div className='w-full bg-white shadow-sm rounded-md hover:scale-[0.99] hover:brightness-[0.98] duration-200 transition-all hover:cursor-pointer'>
+        <div className='w-full bg-white shadow-sm border rounded-md hover:scale-[0.99] hover:brightness-[0.98] duration-200 transition-all hover:cursor-pointer'>
             <div className='h-52 rounded-t-md relative'>
                 <div className='absolute top-2 left-2'>
                     <Badge variant="secondary">

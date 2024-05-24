@@ -31,6 +31,10 @@ const MyListings = () => {
 
 
     const handleSetLatitudeLongitude = (listing) =>{
+        if(latitudeMap === listing?.latitude && longitudeMap === listing?.longitude){
+            alert('Has clikado 2 veces, ejecutas la vista')
+            return
+        }
         setLatitudeMap(listing?.latitude)
         setLongitudeMap(listing?.longitude)
         mapRef.current.flyTo({center: [listing?.longitude, listing?.latitude]});
