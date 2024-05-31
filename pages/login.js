@@ -2,10 +2,40 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { userLogin } from '@/services/users/users.service';
 import Router from 'next/router';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const login = () => {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const [isLoading, setIsLoading] = useState('')
+
+    const [isError, setIsError] = useState(false)
+
+    const handleLogin = () =>{
+        setIsLoading(true)
+        let json = {
+            email,
+            password
+        }
+
+        userLogin(json).then(res=>{
+            console.log("res", res)
+            setIsLoading(false)
+
+            if(res?.data?.success === false){
+                setIsError(true)
+            }else{
+                Router.push('/')
+            }
+        })
+
+    }
+    
+
     return (
         <div className="grid min-h-[100dvh] grid-cols-1 md:grid-cols-2 bg-muted dark:bg-gray-950">
             <div className="hidden md:block">
@@ -47,13 +77,15 @@ const login = () => {
                         </Label>
                         <div className="mt-1">
                             <Input
-                            autoComplete="email"
-                            className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-50 dark:placeholder-gray-400 dark:focus:border-indigo-400 dark:focus:ring-indigo-400 sm:text-sm"
-                            id="email"
-                            name="email"
-                            placeholder="you@example.com"
-                            required
-                            type="email"
+                                autoComplete="email"
+                                className={`block w-full appearance-none rounded-md border ${isError ? 'border-destructive' : 'border-gray-300 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500'} px-3 py-2 placeholder-gray-400 shadow-sm  sm:text-sm`}
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                                type="email"
+                                value={email}
+                                onChange={(e)=>setEmail(e.target.value)}
                             />
                         </div>
                         </div>
@@ -63,13 +95,15 @@ const login = () => {
                         </Label>
                         <div className="mt-1">
                             <Input
-                            autoComplete="current-password"
-                            className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-50 dark:placeholder-gray-400 dark:focus:border-indigo-400 dark:focus:ring-indigo-400 sm:text-sm"
-                            id="password"
-                            name="password"
-                            placeholder="Password"
-                            required
-                            type="password"
+                                autoComplete="current-password"
+                                className={`block w-full appearance-none rounded-md border ${isError ? 'border-destructive' : 'border-gray-300 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500'}  px-3 py-2 placeholder-gray-400 shadow-sm  sm:text-sm`}
+                                id="password"
+                                name="password"
+                                placeholder="Password"
+                                required
+                                type="password"
+                                value={password}
+                                onChange={(e)=>setPassword(e.target.value)}
                             />
                         </div>
                         </div>
@@ -94,7 +128,7 @@ const login = () => {
                                 </a>
                             </div>
                         </div>
-                        <Button onClick={()=>Router.push('/')} className="w-full">
+                        <Button disabled={!email || !password} onClick={handleLogin} className="w-full">
                             Sign in
                         </Button>
                     </div>

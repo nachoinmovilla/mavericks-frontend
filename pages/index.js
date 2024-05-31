@@ -210,8 +210,8 @@ export default function Home() {
 
     return (
         <Layout>
-            <div className='flex items-start gap-4'>
-                <div className='w-4/6 grid grid-cols-2 gap-4'>
+            <div className='lg:flex lg:items-start gap-4 space-y-4 lg:space-y-0'>
+                <div className='w-full lg:w-4/6 grid grid-cols-1 lg:grid-cols-2 gap-4'>
                     <div className='col-span-1'>
                         <div className='rounded-xl bg-white shadow-sm p-6 space-y-6'>
                             <div className='justify-between flex items-center'>
@@ -317,7 +317,7 @@ export default function Home() {
                             </div> 
                         </div>
                     </div>
-                    <div className='col-span-2'>
+                    <div className='col-span-1 lg:col-span-2'>
                         <div className='rounded-xl bg-white shadow-sm p-6 space-y-6'>
                             <div className='justify-between flex items-center'>
                                 <div className='w-full'>
@@ -336,13 +336,13 @@ export default function Home() {
                                         </TabsList>
                                     </Tabs>
                                 </div>
-                                <div className='w-full flex justify-end'>
+                                <div className='w-full hidden lg:flex justify-end'>
                                     <Button variant="outline">
                                         <BiDotsHorizontalRounded />
                                     </Button>
                                 </div>
                             </div>  
-                            <div className='grid grid-cols-3 gap-6'>
+                            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
                                 {LISTINGS?.map((listing, index)=>(
                                     <div key={index}>
                                         <ListingPreview
@@ -354,7 +354,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className='w-2/6 grid grid-cols-1 gap-4 '>
+                <div className='w-full lg:w-2/6 grid grid-cols-1 gap-4 '>
                     <div className='rounded-xl bg-white shadow-sm p-6 space-y-6'>
                         <div className='justify-between flex items-center'>
                             <div>

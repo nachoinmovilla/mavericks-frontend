@@ -180,7 +180,7 @@ const MyListings = () => {
                         ))}
                     </div>
                 </div>
-                <div className='w-5/12 h-full p-2 bg-white'>
+                <div className='w-5/12 h-full p-2 bg-white relative'>
                     <ReactMapGL
                         mapLib={import('mapbox-gl')}
                         ref={mapRef}
