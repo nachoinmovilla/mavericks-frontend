@@ -29,6 +29,7 @@ const Login = () => {
             if(res?.data?.success === false){
                 setIsError(true)
             }else{
+                localStorage.setItem('token', res?.data?.data?.token)
                 Router.push('/')
             }
         })
@@ -128,7 +129,7 @@ const Login = () => {
                                 </a>
                             </div>
                         </div>
-                        <Button disabled={!email || !password} onClick={handleLogin} className="w-full">
+                        <Button disabled={!email || !password || isLoading} onClick={handleLogin} className="w-full">
                             Sign in
                         </Button>
                     </div>
