@@ -40,15 +40,15 @@ const Login = () => {
         <div className="grid min-h-[100dvh] grid-cols-1 md:grid-cols-2 bg-muted dark:bg-gray-950">
             <div className="hidden md:block">
                 <img
-                alt="Sign in image"
-                className="h-full w-full object-cover rounded-tr-[50%]"
-                height={600}
-                src="https://images.unsplash.com/photo-1525683879097-8babce1c602a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                style={{
-                    aspectRatio: "800/600",
-                    objectFit: "cover",
-                }}
-                width={800}
+                    alt="Sign in image logo"
+                    className="h-full w-full object-cover rounded-tr-[50%]"
+                    height={600}
+                    src="https://images.unsplash.com/photo-1525683879097-8babce1c602a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    style={{
+                        aspectRatio: "800/600",
+                        objectFit: "cover",
+                    }}
+                    width={800}
                 />
             </div>
             <div className="flex items-center justify-center px-4 py-12">
