@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
+import Router from 'next/router';
 
 const Layout = ({ children, noPadding = false }) => {
+
+    useEffect(() => {
+        if(!localStorage.getItem('token')){
+            Router.push('/login')
+        }
+    }, [])
+    
+
     return (
         <div className="grid min-h-screen w-full lg:grid-cols-[280px_1fr] bg-muted">
             <Sidebar />
