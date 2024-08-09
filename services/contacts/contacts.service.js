@@ -17,3 +17,20 @@ export const getContacts = ({ page = '1' }) =>{
         return err.response
     })
 }
+
+export const postContact = (json) =>{
+    return axios.post(
+        `${API}/v1/contacts`,json,
+        {
+            headers:{
+                "Content-Type": 'application/json',
+                "Accept": 'application/json',
+                "Authorization": `Bearer ${localStorage.getItem('token')}`
+            }
+        }
+    ).then(res=>{
+        return res
+    }).catch(err=>{
+        return err.response
+    })
+}

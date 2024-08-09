@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { getContacts } from '@/services/contacts/contacts.service';
 import React, { useEffect, useState } from 'react'
-import { BiChevronDown, BiDotsHorizontalRounded } from 'react-icons/bi';
+import Router from 'next/router';
+import { BiChevronDown, BiDotsHorizontalRounded, BiPlus } from 'react-icons/bi';
 
 const Clients = () => {
 
@@ -160,6 +161,7 @@ const Clients = () => {
                         data={clientsList}
                         columns={columns}
                         contentTopLeft={<h1 className='text-4xl font-semibold'>Clients</h1>}
+                        contentTopRight={<Button onClick={()=>Router.push('/clients/create')}><BiPlus />Añadir cliente</Button>}
                     />
                 </div>
             </div>
