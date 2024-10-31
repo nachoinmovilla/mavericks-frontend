@@ -476,7 +476,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <div className='rounded-xl bg-white shadow-sm p-6 space-y-4'>
                         <div className='justify-between flex items-center'>
                             <div>
