@@ -58,6 +58,7 @@ export default function Home() {
 
     const LISTINGS = [
         {
+            ref: "REF123456",
             type: "For Rent",
             rentType: "year",
             price: "3.375€",
@@ -65,12 +66,13 @@ export default function Home() {
             address: "3201 23rd St, San Francisco, CA 94110, USA",
             area: 250,
             bath: 2,
-            garage: 2,
+            garage: 0,
             room: 5,
             longitude: -0.70107,
             latitude: 38.26218
         },
         {
+            ref: "REF654321",
             type: "For Rent",
             rentType: "year",
             image: "https://plus.unsplash.com/premium_photo-1674480165860-f60bcf6aa2f7?q=80&w=2026&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -84,6 +86,7 @@ export default function Home() {
             latitude: 38.264584
         },
         {
+            ref: "REF789012",
             type: "For Sell",
             rentType: null,
             price: "97.778€",
@@ -97,6 +100,7 @@ export default function Home() {
             latitude: 38.259255
         },
     ]
+    
 
     const gh1Options = {
         colors: ['#373ef6', "#34d399"],

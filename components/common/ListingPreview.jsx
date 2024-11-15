@@ -15,7 +15,7 @@ const ListingPreview = ({
             <div className='h-52 rounded-t-md relative'>
                 <div className='absolute top-2 left-2'>
                     <Badge variant="secondary">
-                        REF623736
+                    {data?.ref}
                     </Badge>
                 </div>
                 <img src={data?.image} className='object-cover rounded-t-md w-full h-full' />
@@ -46,11 +46,15 @@ const ListingPreview = ({
                             {data?.area} SQFT
                         </span>
                     </div>
-                    <div className='flex items-center space-x-2'>
-                        <BiSolidCarGarage />
-                        <span>
-                            {data?.garage} Garage
-                        </span>
+                    <div>
+                        {data?.garage > 0 && (
+                            <div className='flex items-center space-x-2'>
+                                <BiSolidCarGarage />
+                                <span>
+                                    {data?.garage} Garage
+                                </span>
+                            </div>
+                        )}
                     </div>
                     <div className='flex items-center space-x-2'>
                         <BiBath />

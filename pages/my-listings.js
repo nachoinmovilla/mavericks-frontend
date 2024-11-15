@@ -42,6 +42,7 @@ const MyListings = () => {
 
     const LISTINGS = [
         {
+            ref: "REF123456",
             type: "For Rent",
             rentType: "year",
             price: "3.375€",
@@ -55,6 +56,7 @@ const MyListings = () => {
             latitude: 38.26218
         },
         {
+            ref: "REF654321",
             type: "For Rent",
             rentType: "year",
             image: "https://plus.unsplash.com/premium_photo-1674480165860-f60bcf6aa2f7?q=80&w=2026&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -68,6 +70,7 @@ const MyListings = () => {
             latitude: 38.264584
         },
         {
+            ref: "REF789012",
             type: "For Sell",
             rentType: null,
             price: "97.778€",
@@ -81,6 +84,7 @@ const MyListings = () => {
             latitude: 38.259255
         },
         {
+            ref: "REF345678",
             type: "For Sell",
             rentType: null,
             image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -94,6 +98,7 @@ const MyListings = () => {
             latitude: 38.264223
         },
         {
+            ref: "REF987654",
             type: "For Sell",
             rentType: null,
             image: "https://images.unsplash.com/photo-1510009489794-352fba39a0b8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -107,6 +112,7 @@ const MyListings = () => {
             latitude: 38.270834
         },
         {
+            ref: "REF112233",
             type: "For Sell",
             rentType: null,
             image: "https://plus.unsplash.com/premium_photo-1661883964999-c1bcb57a7357?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -120,6 +126,7 @@ const MyListings = () => {
             latitude: 38.276564
         },
         {
+            ref: "REF445566",
             type: "For Sell",
             rentType: null,
             image: "https://images.unsplash.com/photo-1628012209120-d9db7abf7eab?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -133,6 +140,7 @@ const MyListings = () => {
             latitude: 38.273639
         },
         {
+            ref: "REF778899",
             type: "For Sell",
             rentType: null,
             image: "https://images.unsplash.com/photo-1598737652403-6e0ee5bf5cf2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -146,6 +154,7 @@ const MyListings = () => {
             latitude: 38.249485
         }
     ]
+    
 
     return (
         <Layout noPadding>
