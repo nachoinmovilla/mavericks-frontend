@@ -3,7 +3,7 @@ import API from '../API'
 
 export const userLogin = (json) =>{
     return axios.get(
-        `${API}/v1/login?email=${json?.email}&password=${json?.password}`,
+        `${API}/login?email=${json?.email}&password=${json?.password}`,
         {
             headers:{
                 "Content-Type": 'application/json',
