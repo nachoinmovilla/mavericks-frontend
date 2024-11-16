@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -15,6 +15,22 @@ import {
 } from "@/components/ui/popover"
 
 const Navbar = () => {
+
+
+    const [userPhoto, setUserPhoto] = useState('');
+    const [userName, setUserName] = useState('');
+    const [userRole, setUserRole] = useState('');
+
+    useEffect(() => {
+        // Accedemos a localStorage solo si estamos en el lado del cliente
+        if (typeof window !== 'undefined') {
+            setUserPhoto(localStorage.getItem('photo') || 'https://via.placeholder.com/150?text=User+Agent');
+            setUserName(localStorage.getItem('name') || 'Guest User');
+            setUserRole(localStorage.getItem('role') || 'Guest');
+        }
+    }, []);
+
+
     return (
         <div className='bg-white h-[60px] border-b px-8 py-6 items-center flex justify-between sticky top-0'>
             <div>
@@ -45,14 +61,14 @@ const Navbar = () => {
                     <DropdownMenuTrigger>
                         <div className='flex items-center space-x-3 hover:bg-muted px-2 py-1 rounded-lg duration-200 transition-all'>
                             <div className='w-[38px] h-[38px] rounded-md bg-muted relative'>
-                                <img src="https://source.boringavatars.com/beam/120/Stefan?colors=264653,f4a261,e76f51&square=true" className='w-full h-full object-cover rounded-md' />
+                                <img src={userPhoto} className='w-full h-full object-cover rounded-md' alt="User profile" />
                             </div>
                             <div className='text-left'>
-                                <div className='font-semibold'>
-                                    Micha Orpands
+                                <div className='font-semibold capitalize'>
+                                    {userName}
                                 </div>
-                                <div className='text-muted-foreground text-xs'>
-                                    Administrator
+                                <div className='text-muted-foreground text-xs capitalize'>
+                                    {userRole}
                                 </div>
                             </div>
                             <BiChevronDown />
